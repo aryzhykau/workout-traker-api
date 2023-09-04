@@ -25,7 +25,7 @@ jobs:
       - name: Build, tag, and push docker image to Amazon ECR(workout-bot)
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REPOSITORY: workout_api
+          REPOSITORY: workout-api
           IMAGE_TAG: $GITHUB_REF_NAME
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$GITHUB_REF_NAME .
