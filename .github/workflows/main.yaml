@@ -29,6 +29,7 @@ jobs:
           IMAGE_TAG: $GITHUB_REF_NAME
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$GITHUB_REF_NAME .
+          docker tag $REGISTRY/$REPOSITORY:$GITHUB_REF_NAME $REGISTRY/$REPOSITORY:latest
           docker push $REGISTRY/$REPOSITORY:$GITHUB_REF_NAME
           docker push $REGISTRY/$REPOSITORY:latest
           
